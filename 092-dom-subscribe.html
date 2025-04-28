@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Youtube Subscribe</title>
+</head>
+<body>
+
+  <p>YouTube Subscribe Button</p>
+  <button class="js-button" onclick="subsButton()">Subscribe</button>
+  
+
+  <script>
+    function subsButton() {
+      /*
+      if (document.querySelector('.js-button').innerHTML === 'Subscribe') {
+        document.querySelector('.js-button').innerHTML = 'Subscribed';
+      } else if (document.querySelector('.js-button').innerHTML === 'Subscribed') {
+        document.querySelector('.js-button').innerHTML = 'Subscribe';
+      }
+      */
+
+      //if ternary operator
+      document.querySelector('.js-button')
+        .innerHTML === 'Subscribe' ?
+      document.querySelector('.js-button')
+        .innerHTML = 'Subscribed' : 
+      document.querySelector('.js-button')
+        .innerHTML = 'Subscribe';
+        
+    }
+  </script>
+</body>
+</html>
