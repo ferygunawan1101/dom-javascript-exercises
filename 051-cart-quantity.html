@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart Quantity</title>
+</head>
+<body>
+  <h1>Cart Quantity</h1>
+  <p>Feat DOM Exercises</p>
+
+  <button onclick="
+    showQuantity();
+  ">Show Quantity</button>
+
+  <button onclick="
+    updateQuantity(1);
+  ">Add to Cart</button>
+
+  <button onclick="
+    updateQuantity(2);
+  ">+2</button>
+
+  <button onclick="updateQuantity(3)">+3</button>
+
+  <button onclick="resetCartQuantity()">Reset Cart</button>
+
+  <p class="js-result"></p>
+
+  <script>
+    let cartQuantity = 0;
+    
+    cartQuantity = JSON.parse(localStorage.getItem('quantitySave')) || 0;
+
+    function showQuantity() {
+      document.querySelector('.js-result')
+        .innerHTML = `Cart quantity: ${cartQuantity}`;
+    }
+
+    function updateQuantity(num) {
+      cartQuantity += num;
+      showQuantity();
+
+      localStorage.setItem('quantitySave', JSON.stringify(cartQuantity));
+    }
+
+    function resetCartQuantity() {
+      cartQuantity = 0;
+      showQuantity();
+      localStorage.removeItem('quantitySave');
+    }
+
+  </script>
+</body>
+</html>
