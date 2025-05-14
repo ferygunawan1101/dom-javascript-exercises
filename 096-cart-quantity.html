@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Cart Quantity</h1>
+
+  <p>
+    <button onclick="showQuantity()">Show Quantity</button>
+    <button onclick="plusCartQuantity(1)">Add to cart</button>
+  </p>
+
+  <p>
+    <button onclick="plusCartQuantity(2)">+2</button>
+    <button onclick="plusCartQuantity(3)">+3</button>
+    <button onclick="plusCartQuantity(-1)">-1</button>
+  </p>
+
+  <p>
+    <button onclick="resetCartQuantity()">
+      Reset Cart
+    </button>
+  </p>
+
+  <p class="js-cart-quantity">
+    Cart Quantity:
+  </p>
+  
+
+  <script>
+    let cartQuantity = 0;
+    console.log(cartQuantity);
+
+    function showQuantity() {
+      document.querySelector('.js-cart-quantity').innerHTML = `Cart Quantity: ${cartQuantity}`;
+    }
+
+    function plusCartQuantity(plusNum) {
+      cartQuantity = cartQuantity + plusNum;
+      showQuantity();
+    }
+
+    function resetCartQuantity() {
+      cartQuantity = 0;
+      showQuantity();
+    }
+
+  </script>
+</body>
+</html>
