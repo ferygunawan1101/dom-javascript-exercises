@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Onkeyup</title>
+</head>
+<body>
+  <h1>Input Onkeyup</h1>
+
+  <input type="text" placeholder="Type something" onkeyup="onkeyupInput()" />
+
+  <p>
+    <button onclick="resetInput()">Reset</button>
+  </p>
+
+  <p class="js-popup"></p>
+  
+  <script>
+    let inputKey = '';
+
+    function onkeyupInput() {
+      console.log('typing');
+
+      console.log(event.key);
+
+      inputKey += event.key;
+
+      document.querySelector('.js-popup')
+        .innerHTML = inputKey;
+    }
+
+    function resetInput() {
+      inputKey = '';
+      document.querySelector('.js-popup')
+        .innerHTML = 'reset';
+    }
+  </script>
+</body>
+</html>
