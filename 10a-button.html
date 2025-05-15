@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buttons</title>
+  <style>
+    .amazon-button {
+      background-color: rgb(255, 216, 20);
+      border: none;
+      padding: 5px 35px;
+      font-family: Arial, Helvetica, sans-serif;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: 100;
+    }
+
+    .gaming-button {
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .is-toggled {
+      background-color: black;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <p>Amazon Button</p>
+
+  <button class="js-amazon-button amazon-button">
+    Add to Cart
+  </button>
+
+  <p>Toggle Button</p>
+
+  <button class="js-gaming-button gaming-button" onclick="clickGaming()">
+    Gaming
+  </button>
+  
+
+
+
+  <script>
+    const amazonButtonElement = document.querySelector('.js-amazon-button');
+
+    console.log(amazonButtonElement.classList.contains('js-amazon-button'));
+
+
+    function clickGaming() {
+      const gamingButtonElement = document.querySelector('.js-gaming-button');
+
+      if (gamingButtonElement.classList.contains('is-toggled') === false) {
+        gamingButtonElement.classList.add('is-toggled');
+      } else if (gamingButtonElement.classList.contains('is-toggled') === true) {
+        gamingButtonElement.classList.remove('is-toggled');
+      }
+    }
+
+    
+  </script>
+</body>
+</html>
