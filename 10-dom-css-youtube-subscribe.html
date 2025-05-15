@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM - Youtube Subscribe</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .subscribe-button {
+      background-color: black;
+      color: white;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 15px;
+      padding-right: 15px;
+      border-radius: 30px;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+    }
+
+    .is-subscribed {
+      background-color: rgb(232, 224, 224);
+      color: black;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>DOM CSS - Youtube Subscribe</h1>
+  <hr />
+
+  <p>Youtube Subscribe Button</p>
+
+  <button class="js-subscribe-button subscribe-button" onclick="clickSubscribe()">
+    Subscribe
+  </button>
+
+
+  <script>
+    function clickSubscribe() {
+      //console.log('clicking ...');
+      const subsButtonElement = document.querySelector('.js-subscribe-button');
+
+      /*
+      subsButtonElement.innerText === 'Subscribe' ?
+        subsButtonElement.innerText = 'Subscribed' :
+        subsButtonElement.innerText = 'Subscribe';
+      */
+      
+      if (subsButtonElement.innerText === 'Subscribe') {
+        subsButtonElement.innerText = 'Subscribed';
+        subsButtonElement.classList
+          .add('is-subscribed');
+      } else {
+        subsButtonElement.innerText = 'Subscribe';
+        subsButtonElement.classList
+          .remove('is-subscribed');
+      }
+    }
+  </script>
+</body>
+</html>
