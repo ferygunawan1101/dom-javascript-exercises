@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Three Button Toggle</title>
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .three-button {
+      padding: 10px 13px;
+      margin: 3px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .is-toggled {
+      background-color: black;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h1>Three Button Toggle</h1>
+
+  <button class="three-button js-gaming-button" onclick="clickButton('.js-gaming-button')">
+    Gaming
+  </button>
+
+  <button class="three-button js-music-button" onclick="clickButton('.js-music-button')">
+    Music
+  </button>
+
+  <button class="three-button js-tech-button" onclick="clickButton('.js-tech-button')">
+    Tech
+  </button>
+  
+
+  <script>
+    function clickButton(jsclassButton) {
+      const buttonElement = document.querySelector(jsclassButton);
+      //console.log(buttonElement);
+
+      const toggledButtonElement = document.querySelector('.is-toggled');
+      //console.log(toggledButtonElement);
+
+      if (!buttonElement.classList.contains('is-toggled')) {
+        buttonElement.classList.add('is-toggled');
+        
+        if (toggledButtonElement) {
+          toggledButtonElement.classList.remove('is-toggled');
+        }
+      } else {
+        buttonElement.classList.remove('is-toggled');
+      }
+
+    }
+  </script>
+</body>
+</html>
